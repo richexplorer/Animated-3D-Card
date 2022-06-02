@@ -48,8 +48,8 @@ body {
 }
 
 .image img {
-    width: 65px;
-    height: 65px;
+    width: 74px;
+    height: 74px;
     object-fit: contain;
     z-index: 2;
     transition: all 0.75s ease-out;
