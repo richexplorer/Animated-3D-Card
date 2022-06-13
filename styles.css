@@ -2,48 +2,45 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transform-style: preserve-3d;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  perspective: 1000px;
-  background-color: transparent;
-  transform-style: flat;
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+    background-color: transparent;
+    transform-style: flat;
 }
 
-section {
+.title {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.container {
+    width: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background: #1c1c25;
+    background-color: transparent;
 }
 
-section::before {
-    content: '';
-    position: absolute;
-    bottom: -20%;
-    left: 40%;
-    width: 600px;
-    height: 600px;
-    background: linear-gradient(rgb(4, 21, 250), rgb(238, 6, 18));
-    border-radius: 50%;
+.card {
+    height: 500px;
+    width: 400px;
+    border-radius: 30px;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    background-color: transparent;
+    margin: 0 auto;
+    text-align: center;
 }
 
-section::after {
-    content: '';
-    position: absolute;
-    bottom: 55%;
-    left: 25%;
-    width: 300px;
-    height: 300px;
-    background: linear-gradient(rgb(250, 102, 4), rgb(238, 6, 161));
-    border-radius: 50%;
-}
+
 
 .image {
     min-height: 20px;
@@ -53,175 +50,74 @@ section::after {
 }
 
 .image img {
-    width: 70px;
-    height: 70px;
+    width: 74px;
+    height: 74px;
     object-fit: contain;
     z-index: 2;
     transition: all 0.75s ease-out;
-    margin: 4px 5px;
+    margin: 10px 7.5px;
 }
 
-.card1 {
-    position: relative;
-    width: 508px;
-    height: 314px;
-    transform-style: preserve-3d;
-    perspective: 500px;
-    z-index: 2;
-}
-
-.card1 .face {
+.circle {
+    width: 15rem;
+    height: 15rem;
+    background: linear-gradient(
+        to right,
+        rgba(245, 70, 66, 0.75),
+        rgba(8, 83, 156, 0.75)
+    );
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
-    border-radius: 15px;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(28px);
-    transform-style: preserve-3d;
-    transition: 1s;
-    backface-visibility: hidden;
-    border-top: 1px solid rgba(255, 255, 255, 0.4);
-    border-left: 1px solid rgba(255, 255, 255, 0.4);
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    z-index: 1;
 }
 
-.card1:hover .face.front {
-    transform: rotateY(180deg);
+.info h1 {
+    font-size: 3rem;
+    transition: all 0.75s ease-out;
 }
 
-.card1 .face.back {
-    transform: rotateY(180deg);
+.info h3 {
+    font-size: 1.3rem;
+    padding: 20px 0;
+    color: #585858;
+    font-weight: lighter;
+    transition: all 0.75s ease-out;
 }
 
-.card1:hover .face.back {
-    transform: rotateY(360deg);
-}
-
-
-.card1 .face.front .debit {
-    position: absolute;
-    left: 40px;
-    top: 30px;
-    color: #fff;
-    font-weight: 500;
-}
-
-.card1 .face.front .bank {
-    position: relative;
-    color: #fff;
-    font-weight: 500;
-    font-style: italic;
-    font-size: 24px;
-    text-align: center;
-    margin-top: 15px;
-}
-
-.card1 .face.front .bank img {
-    width: 150px;
-}
-
-.card1 .face.front .chip {
-    position: absolute;
-    top: 80px;
-    left: 50px;
-    max-width: 64px;
-}
-
-.card1 .face.front .number {
-    position: absolute;
-    bottom: 130px;
-    left: 40px;
-    color: #fff;
-    font-weight: 500;
-    letter-spacing: 6px;
-    font-size: 18px;
-    text-shadow: 0 2px 1px #0005;
-    font-family: 'Orbitron', sans-serif;
-}
-
-.card1 .face.front .valid {
-    position: absolute;
-    bottom: 90px;
-    left: 40px;
+.sizes {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    font-weight: 300;
-    line-height: 1em;
-    text-align: right;
+    justify-content: space-between;
+    transition: all 0.75s ease-out;
 }
 
-.card1 .face.front .valid span:last-child {
-    margin-left: 20px;
-    font-size: 16px;font-weight: 400;
-    letter-spacing: 2px;
+.sizes button {
+    padding: 0.5rem 2rem;
+    background: none;
+    border: none;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius:  30px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #585858;
 }
 
-.card1 .face.front .card-holder {
-    position: absolute;
-    bottom: 40px;
-    left: 40px;
-    color: #fff;
-    font-weight: 300;
-    font-size: 16px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+button.active {
+    background: #585858;
+    color: white;
 }
 
-.card1 .face.back .blackbar {
-    position: absolute;
-    top: 40px;
+.purchase {
+    margin-top: 5rem;
+}
+
+.purchase button {
     width: 100%;
-    height: 60px;
-    background: #000;
-}
-
-.card1 .face.back .cvvtext {
-  position: relative;
-  text-align: center;
-  margin-top: 20%;
-}
-
-.card1 .face.back .cvvtext .white-bar {
-    position: relative;
-    width: 400px;
-    height: 40px;
-    background: #fff;
-    margin-top: 5px;
-}
-
-.card1 .face.back .cvvtext .cvv {
-    position: relative;
-    top: -35px;
-    left: 345px;
-    background: #ccc;
-    color: #111;
-    width: 50px;
-    height: 30px;
-    font-weight: 600;
-    letter-spacing: 3px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.card1 .face.back .text {
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    right: 30px;
-    color: #fff;
-    font-size: 10px;
-    line-height: 1. 4em;
-    font-weight: 300;
-}
-
-.badge-wrapper {
-  margin:10px 20px 20px 20px;
-  text-align: center;
+    padding: 1rem 0rem;
+    background: #f54642;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 30px;
+    font-weight: bolder;
+    transition: all 0.75s ease-out;
 }
